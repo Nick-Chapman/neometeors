@@ -577,6 +577,8 @@ ASSERT c2dataSize = 40
 .keyCtrl  equb 0
 .keyShift equb 0
 .keyEnter equb 0
+.keyZ     equb 0
+.keyX     equb 0
 .keyK     equb 0 ; kill all rocks on level (for testing)
 .keyV     equb 0 ; view version info
 .keyD     equb 0 ; view debug info
@@ -612,6 +614,8 @@ endmacro
     PollKey -71,  keyK
     PollKey -100, keyV
     PollKey -51,  keyD
+    PollKey -98,  keyZ
+    PollKey -67,  keyX
 
     rts
 
@@ -1789,17 +1793,23 @@ endmacro
 
 .turnLeftOnCaps: {
     lda frameCounter : and #1 : beq no ; on even frames ;; TODO: do in less hacky way
-    CheckPress keyCaps : beq no
-    dec myDirection, x
+    CheckPress keyCaps : bne yes
+    CheckPress keyZ : bne yes
 .no:
+    rts
+.yes:
+    dec myDirection, x
     rts
     }
 
 .turnRightOnCtrl: {
     lda frameCounter : and #1 : beq no ; on even frames
-    CheckPress keyCtrl : beq no
-    inc myDirection, x
+    CheckPress keyCtrl : bne yes
+    CheckPress keyX : bne yes
 .no:
+    rts
+.yes:
+    inc myDirection, x
     rts
     }
 

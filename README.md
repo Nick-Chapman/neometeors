@@ -11,8 +11,8 @@ _NeoMeteors_ is a ground up re-implementation, which attempts to match the mecha
 [NeoMeterors](https://bbc.godbolt.org/?&disc1=https://nick-chapman.github.io/neometeors/neometeors.ssd&autoboot)
 
 ### Controls
-- `Caps Lock` : Turn left
-- `Ctrl` : Turn Right
+- `Z` or `Caps Lock` : Turn left
+- `X` or `Ctrl` : Turn Right
 - `Shift` : Thrust
 - `Enter/Return` : Fire
 - `Space Bar` : Restart after game over
