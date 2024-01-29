@@ -19,7 +19,7 @@ _NeoMeteors_ is a ground up re-implementation, which attempts to match the mecha
 
 ### Prerequisites for local build/run
 
-- [beebaem](https://github.com/stardot/beebasm)
+- [beebasm](https://github.com/stardot/beebasm)
 - [b-em](https://github.com/stardot/b-em)
 
 ### Version 0.1
